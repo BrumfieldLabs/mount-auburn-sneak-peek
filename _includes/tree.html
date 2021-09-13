@@ -1,0 +1,18 @@
+<ul>
+  {% for item in tree %}
+    <li>
+      {% if item.url %}
+        <a href="{{ item.url | relative_url }}">
+          {{ item.title }}
+        </a>
+      {% else %}
+          {{ item.title }}
+      {% endif %}
+    </li>
+
+    {% if item.has_children %}
+      {% assign tree = item.children %}
+      {% include tree.html %}
+    {% endif %}
+  {% endfor %}
+</ul>

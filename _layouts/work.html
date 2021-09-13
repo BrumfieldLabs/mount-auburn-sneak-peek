@@ -1,0 +1,16 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<dl>
+  {% for metadata in page.metadata %}
+    <dt class="fas">
+      {{ metadata.label }}
+    </dt>
+    <dd>
+      {{ metadata.value }}
+    </dd>
+  {% endfor %}
+</dl>
